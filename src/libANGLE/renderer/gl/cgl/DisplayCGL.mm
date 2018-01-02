@@ -296,8 +296,7 @@ egl::Error DisplayCGL::waitNative(const gl::Context *context, EGLint engine) con
 
 egl::Error DisplayCGL::makeCurrentSurfaceless(gl::Context *context)
 {
-    // We have nothing to do as mContext is always current, and that CGL is surfaceless by
-    // default.
+    CGLSetCurrentContext(mContext);
     return egl::NoError();
 }
 }
